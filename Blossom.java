@@ -57,7 +57,7 @@ public class Blossom extends Actor
      */
     public void act()
     {
-		System.out.println("blossom moved");
+		//System.out.println("blossom moved");
 		if(numSteps<LIFETIME_STEPS){
 			Color c = getColor();
 			int red = (int) (c.getRed() * (1 - DARKENING_FACTOR));
@@ -65,7 +65,7 @@ public class Blossom extends Actor
 			int blue = (int) (c.getBlue() * (1 - DARKENING_FACTOR));
 			setColor(new Color(red, green, blue));
 			numSteps++;
-			System.out.println(numSteps+" "+LIFETIME_STEPS);
+			//System.out.println(numSteps+" "+LIFETIME_STEPS);
 		}
 		else{
 			removeSelfFromGrid();
