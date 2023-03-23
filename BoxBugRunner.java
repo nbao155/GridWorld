@@ -17,6 +17,9 @@
  */
 
 import info.gridworld.actor.ActorWorld;
+import info.gridworld.actor.Actor;
+import info.gridworld.grid.Grid;
+import info.gridworld.grid.UnboundedGrid;
 import info.gridworld.grid.Location;
 import java.awt.Color;
 
@@ -28,13 +31,13 @@ public class BoxBugRunner
 {
     public static void main(String[] args)
     {
-        ActorWorld world = new ActorWorld();
+        UnboundedGrid<Actor> ug = new UnboundedGrid<Actor>();
+        ActorWorld world = new ActorWorld(ug);
         BoxBug alice = new BoxBug(6);
         alice.setColor(Color.ORANGE);
         BoxBug bob = new BoxBug(3);
-        Jumper cat = new Jumper();
         world.add(new Location(7, 8), alice);
-        world.add(new Location(5, 5), cat);
+        world.add(new Location(5, 5), bob);
         world.show();
     }
 }

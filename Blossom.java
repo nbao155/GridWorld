@@ -14,8 +14,9 @@
  * @author Cay Horstmann
  */
 
+package info.gridworld.actor;
+
 import java.awt.Color;
-import info.gridworld.actor.Actor;
 
 /**
  * A <code>Blossom</code> is an actor that darkens over time and then removes itself
@@ -34,7 +35,7 @@ public class Blossom extends Actor
     // lose 5% of color value in each step
 
     /**
-     * Constructs a blue blossom.
+     * Constructs a pink flower.
      */
     public Blossom()
     {
@@ -43,7 +44,7 @@ public class Blossom extends Actor
     }
 
     /**
-     * Constructs a blossom
+     * Constructs a flower of a given color.
      * @param initialColor the initial color of this flower
      */
     public Blossom(int lifetimeLength)
@@ -57,15 +58,14 @@ public class Blossom extends Actor
      */
     public void act()
     {
-		//System.out.println("blossom moved");
 		if(numSteps<LIFETIME_STEPS){
 			Color c = getColor();
 			int red = (int) (c.getRed() * (1 - DARKENING_FACTOR));
 			int green = (int) (c.getGreen() * (1 - DARKENING_FACTOR));
 			int blue = (int) (c.getBlue() * (1 - DARKENING_FACTOR));
+
 			setColor(new Color(red, green, blue));
 			numSteps++;
-			//System.out.println(numSteps+" "+LIFETIME_STEPS);
 		}
 		else{
 			removeSelfFromGrid();
