@@ -31,8 +31,9 @@ import java.util.ArrayList;
 public class RockHound extends Critter
 {
     /**
-     * Randomly selects a neighbor and changes this critter's color to be the
-     * same as that neighbor's. If there are no neighbors, the Chameleon darkens.
+     * Processes all actors near the RockHound, and removes them if they are 
+     * a Rock type
+     * @param actors	The actors near the RockHound
      */
     public void processActors(ArrayList<Actor> actors)
     {
