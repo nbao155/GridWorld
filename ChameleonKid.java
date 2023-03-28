@@ -9,31 +9,30 @@ import info.gridworld.grid.Location;
 
 import java.util.ArrayList;
 public class ChameleonKid extends ChameleonCritter{
-	/**
-	 * Finds the actors above and below the ChameleonKid
-	 */
-	public ArrayList<Actor> getActors()
-    {
-		int row;
-		ArrayList<Actor> ar = new ArrayList<Actor>();
-		Location curLoc = getLocation();
-		if(curLoc.getRow()>0){
-			row = curLoc.getRow()-1;
-			ar.add(getGrid().get(new Location(row, curLoc.getCol())));
-			if(ar.get(0)==null)
-				ar.remove(0);
-		}
-		if(curLoc.getRow()<getGrid().getNumRows()-1){
-			row = curLoc.getRow()+1;
-			ar.add(getGrid().get(new Location(row, curLoc.getCol())));
-			if(ar.get(0)==null)
-				ar.remove(0);
-		}
-		for(int a = 0;a<ar.size();a++){
-			if(ar.get(a)==null)
-				ar.remove(a);
-		}
-		return ar;
+/**
+ * Finds the actors above and below the ChameleonKid
+ */
+public ArrayList<Actor> getActors(){
+	int row;
+	ArrayList<Actor> ar = new ArrayList<Actor>();
+	Location curLoc = getLocation();
+	if(curLoc.getRow()>0){
+		row = curLoc.getRow()-1;
+		ar.add(getGrid().get(new Location(row, curLoc.getCol())));
+		if(ar.get(0)==null)
+			ar.remove(0);
+	}
+	if(curLoc.getRow()<getGrid().getNumRows()-1){
+		row = curLoc.getRow()+1;
+		ar.add(getGrid().get(new Location(row, curLoc.getCol())));
+		if(ar.get(0)==null)
+			ar.remove(0);
+	}
+	for(int a = 0;a<ar.size();a++){			
+		if(ar.get(a)==null)
+			ar.remove(a);
+	}
+	return ar;
     }
     /**
      * Turns towards the new location as it moves.
