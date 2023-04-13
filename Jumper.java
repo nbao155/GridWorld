@@ -96,6 +96,9 @@ public class Jumper extends Bug
 		}
 		//System.out.println(canMove+" "+hasMoved+" "+heading+"\n\n");
     }
+    /**
+     * Moves the bug after finding the valid locations it can move
+     */
     public void moveIt(){
 		//System.out.println(row+" L "+col);
 		Location lc = new Location(row, col);
@@ -143,6 +146,11 @@ public class Jumper extends Bug
 			newRow = 0;
 		}
 	}
+	
+	/**
+	 * Changes the next Location the Jumper will move to
+	 * @return 		Which location the bug will move to next
+	 */
 	public Location changeLoc(Location lc){
 		if(heading==0){
 			lc = new Location(row-2, col);
